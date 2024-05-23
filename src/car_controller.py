@@ -52,7 +52,6 @@ def is_vehicle_within_slot_limits(slot):
     if slot.vehicle is None:
         return None
     
-    # else, calculate positions (front and back) and check if vehicle is within slot
     veh_length = slot.vehicle.AttValue('Length')
     veh_position = slot.vehicle.AttValue('Pos')
     veh_front_limit = veh_position + (veh_length/2)

@@ -80,11 +80,11 @@ def simulate_center_same_speed(Vissim):
         for slot in slots_link_1:
             if cc.is_vehicle_within_slot_limits(slot) is False:
                 if slot.vehicle.AttValue('Pos') < 60:
-                    logger.write_log('vehicle_out_of_slot_limits_on_link_1 (id, speed, pos)', slot.vehicle.AttValue('No'), slot.vehicle.AttValue('Speed'), slot.vehicle.AttValue('Pos'))
+                    logger.write_log('vehicle_out_of_slot_limits_on_link_1 (id, speed, car_pos, slot_pos)', slot.vehicle.AttValue('No'), slot.vehicle.AttValue('Speed'), slot.vehicle.AttValue('Pos'), slot.position)
         for slot in slots_link_2:
             if cc.is_vehicle_within_slot_limits(slot) is False:
                 if slot.vehicle.AttValue('Pos') < 60:
-                    logger.write_log('vehicle_out_of_slot_limits_on_link_2 (id, speed, pos)', slot.vehicle.AttValue('No'), slot.vehicle.AttValue('Speed'), slot.vehicle.AttValue('Pos'))
+                    logger.write_log('vehicle_out_of_slot_limits_on_link_2 (id, speed, car_pos, slot_pos)', slot.vehicle.AttValue('No'), slot.vehicle.AttValue('Speed'), slot.vehicle.AttValue('Pos'), slot.position)
         
         # Every N iteractions, print 
         if i%20 == 0:
